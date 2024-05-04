@@ -1,0 +1,53 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/10bbbba2cb.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>login page</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'loginn.css'%}" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-box">
+        <h1 id="title">Login</h1>
+        <form method="POST">
+          {% csrf_token %}
+          <div class="input-ground">
+            <div class="input-field" id="namefield">
+              <i class="fa-solid fa-user"></i>
+              <input
+                required
+                type="text"
+                name="username"
+                placeholder="Name"
+              />
+            </div>
+            <div class="input-field">
+              <i class="fa-solid fa-envelope"></i>
+              <input required type="email" name="email" placeholder="Email" />
+            </div>
+            <div class="input-field">
+              <i class="fa-solid fa-lock"></i>
+              <input
+                required
+                type="password"
+                name="logpassword"
+                placeholder="Password"
+              />
+            </div>
+            
+            <p id="forgot">Forgot Password ? <a href="#">Click Here</a></p>
+          </div>
+          <div class="btn">
+            <button type="submit" id="signupbtn">submit</button>
+           
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
